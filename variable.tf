@@ -1,30 +1,31 @@
 // VPC ID 
 variable "vpc_id" {
-  description = "VPC ID"
+  description = "Add your existing VPC ID"
   type = string
 }
 
 // user public IP
 variable "public_ip" {
-  description = "User Public IP"
+  description = "Your public IP , this IP will be white listed in SG , Defaults to 0.0.0.0/0 exp - 10.15.37.23/32"
   type = string
+  default = "0.0.0.0/0"
 }
 
 // Master node AMI ID
 variable "master_ami" {
- description = "Master node AMI ID"
+ description = "Master node AMI ID (should be RHEL or Amazon linux)"
  type = string 
 }
 
 // Worker node AMI ID for RHEL instances
 variable "worker_ami_rhel" {
- description = "Worker node AMI ID"
+ description = "Worker node AMI ID (RHEL or Amazon linux)"
  type = string 
 }
 
 // Worker node AMI ID for DEBIAN instances
 variable "worker_ami_debian" {
- description = "Worker node AMI ID"
+ description = "Worker node AMI ID (Debian or Ubuntu)"
  type = string 
 }
 
@@ -55,7 +56,7 @@ variable "worker_sub_id" {
 
 // Key Name
 variable "key_name" {
-  description = "pem key name"
+  description = "pem key name for nodes"
   type = string
 }
 
@@ -74,12 +75,12 @@ variable "worker_count_debian" {
 
 //Key path in local machine
 variable "key_path" {
-  description = "Key file path in local machine"
+  description = "PEM Key file path in local machine"
   type = string
 }
 
 //ansible user password
 variable "ansible_user_password" {
-  description = "ansible user password"
+  description = "password to create ansible user"
   type = string
 }

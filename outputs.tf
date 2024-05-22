@@ -1,5 +1,6 @@
 //Master node public IP
 output "Master-node-public-ip" {
+  description = "ansible controller node public ip"
   value = aws_instance.master_node.public_ip
 }
 
@@ -10,6 +11,7 @@ locals {
 
 // Worker Nodes ip 
 output "Woker-nodes-public-ip" {
+  description = "ansible worker nodes public ip adress"
   value = local.ec2-public-ips
 }
 
